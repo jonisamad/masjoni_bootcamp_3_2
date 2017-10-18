@@ -1,30 +1,39 @@
 
-<div class="table-responsive custom-table">
-  
-    <table class="table table-bordered table-striped table-hover">
-      <tr>
-        <th>No Kamar</th>
-        <th>Harga</th>
-        <th></th>
-      </tr>
-      <tr *ngFor="let u of api.UserList" >
-        <td>
-          {{u.name}}
-        </td>
-        <td>
-          {{u.email}}
-        </td>
-        <td>
-          {{u.address.street}}
-        </td>
-        <td>
-          {{u.company.name}}
-        </td>
-        <td>
-          <button type="button" class="btn btn-default btn-danger" (click)="api.RemoveUser(u.id)">
-            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove
-          </button>
-        </td>
-      </tr>
-    </table>
-  </div>
+<div class="container col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+    
+      <br>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title lead">
+            <strong>Hotel Prodeo</strong>
+          </h2>
+        </div>
+      </div>
+    
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title lead">
+            <strong>Kamar Tersedia</strong>
+          </h2>
+        </div>
+        <div class="panel-body">
+    
+          <table class="table">
+            <tr>
+              <th>No Kamar</th>
+              <th>Harga</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let kamar of ListKamar">
+              <td>{{ kamar.no_kamar }}</td>
+              <td>{{ kamar.harga }}</td>
+              <td>
+                <button type="button" class="btn btn-info">
+                  <i class="fa fa-suitcase" aria-hidden="true"></i> Reservasi</button>
+              </td>
+            </tr>
+          </table>
+    
+        </div>
+      </div>
+    </div>
