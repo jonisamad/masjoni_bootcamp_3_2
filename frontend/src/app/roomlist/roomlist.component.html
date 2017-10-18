@@ -1,0 +1,30 @@
+
+<div class="table-responsive custom-table">
+  
+    <table class="table table-bordered table-striped table-hover">
+      <tr>
+        <th>No Kamar</th>
+        <th>Harga</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let u of api.UserList" >
+        <td>
+          {{u.name}}
+        </td>
+        <td>
+          {{u.email}}
+        </td>
+        <td>
+          {{u.address.street}}
+        </td>
+        <td>
+          {{u.company.name}}
+        </td>
+        <td>
+          <button type="button" class="btn btn-default btn-danger" (click)="api.RemoveUser(u.id)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
